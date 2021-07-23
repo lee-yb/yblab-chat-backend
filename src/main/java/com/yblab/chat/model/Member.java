@@ -21,6 +21,7 @@ public class Member extends BaseEntity{
     private String phone;
     private String email;
     private String bio;
+    private String country;
 
 //    @ManyToMany
 //    @JsonIgnore

@@ -30,7 +30,6 @@ public class ChatRoomController {
     @PostMapping("/room")
     public ChatRoom createChatRoom(@RequestBody ChatRoomDto newChatRoomDto) {
         return chatRoomService.save(newChatRoomDto);
-//        return chatRoomRepository.save(newChatRoom);
     }
 
     @PutMapping("/room/{id}")

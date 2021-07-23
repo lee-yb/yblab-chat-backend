@@ -17,10 +17,9 @@ public class ChatRoomDto extends BaseDto {
     private List<Long> member_ids;
 
     //baseEntity, baseDto 에 generic 이용하여 추상화필요
-    public ChatRoom toEntity(ChatRoom chatRoom){
-        if (chatRoom == null){
-            chatRoom = new ChatRoom();
-        }
+    public ChatRoom toEntity(){
+        ChatRoom chatRoom = new ChatRoom();
+
         chatRoom.setRoom_name(this.room_name);
         chatRoom.setRoom_topic(this.room_topic);
         chatRoom.setRoom_desc(this.room_desc);

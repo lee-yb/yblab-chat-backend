@@ -43,7 +43,7 @@ public class ChatRoomService {
         /**
          * @TODO: toEntity(), toDto() 필요
          */
-        ChatRoom newChatRoom = newChatRoomDto.toEntity(new ChatRoom());
+        ChatRoom newChatRoom = newChatRoomDto.toEntity();
         List<Member> members = memberRepository.findAllById(newChatRoomDto.getMember_ids());
         newChatRoom.setChatRoomMemberJoins(setChatRoomMemberJoinsByMembers(newChatRoom, members));
         newChatRoom.setStatus(ChatRoomStatusEnum.OPEN.getValue());
@@ -55,7 +55,7 @@ public class ChatRoomService {
          * @TODO: ChatRoomMemberJoin 기존 데이터와 중복되는 데이터를 감지하여 내비두고 새로운 데이터만 update
          */
 
-        ChatRoom aChatRoom = chatRoomDto.toEntity(new ChatRoom());
+        ChatRoom aChatRoom = chatRoomDto.toEntity();
         List<Member> members = memberRepository.findAllById(chatRoomDto.getMember_ids());
 
         return chatRoomRepository.findById(id)

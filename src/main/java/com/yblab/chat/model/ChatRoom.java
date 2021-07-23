@@ -20,9 +20,10 @@ public class ChatRoom extends BaseEntity{
     private String room_desc;
     public char status;
 
+    @OneToMany(mappedBy = "chatRoom", cascade = CascadeType.ALL)
+    private List<ChatRoomMemberJoin> chatRoomMemberJoins;
+
 //    @ManyToMany(mappedBy = "chatRooms")
 //    List<Member> members;
 
-    @OneToMany(mappedBy = "chatRoom", cascade = CascadeType.ALL)
-    private List<ChatRoomMemberJoin> chatRoomMemberJoins;
 }
